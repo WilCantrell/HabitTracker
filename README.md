@@ -5,6 +5,10 @@ A sleek, modern desktop habit tracker built with Electron. Track your daily habi
 ![Electron](https://img.shields.io/badge/Electron-33.0-47848F?logo=electron)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+## Screenshot
+
+![Habit Tracker](screenshot.png)
+
 ## Features
 
 - ✅ **Add/Edit/Delete habits** — Simple habit management with modal UI
