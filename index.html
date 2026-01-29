@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Draggable title bar area -->
+    <div class="title-bar">
+      <h1>🎯 Habit Tracker</h1>
+    </div>
+
+    <!-- Stats Overview -->
+    <div class="stats-container" id="stats-container">
+      <div class="stat-card">
+        <span class="stat-value" id="total-habits">0</span>
+        <span class="stat-label">Habits</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="today-completed">0</span>
+        <span class="stat-label">Done Today</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="best-streak">0</span>
+        <span class="stat-label">Best Streak</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="completion-rate">0%</span>
+        <span class="stat-label">This Week</span>
+      </div>
+    </div>
+
+    <!-- Add Habit Form -->
+    <div class="add-habit-container">
+      <input type="text" id="habit-input" placeholder="Add a new habit..." maxlength="50">
+      <button id="add-habit-btn" class="btn btn-primary">+ Add</button>
+    </div>
+
+    <!-- Date Navigation -->
+    <div class="date-nav">
+      <button id="prev-week" class="btn btn-icon">←</button>
+      <span id="date-range">Loading...</span>
+      <button id="next-week" class="btn btn-icon">→</button>
+    </div>
+
+    <!-- Habits Grid -->
+    <div class="habits-container">
+      <table class="habits-table" id="habits-table">
+        <thead>
+          <tr id="table-header">
+            <th class="habit-name-col">Habit</th>
+            <!-- Days will be added dynamically -->
+          </tr>
+        </thead>
+        <tbody id="habits-body">
+          <!-- Habits will be rendered here -->
+        </tbody>
+      </table>
+      <div class="empty-state" id="empty-state">
+        <p>🌱 No habits yet!</p>
+        <p>Add your first habit above to start tracking.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal" id="edit-modal">
+    <div class="modal-content">
+      <h2>Edit Habit</h2>
+      <input type="text" id="edit-habit-input" maxlength="50">
+      <div class="modal-actions">
+        <button id="delete-habit-btn" class="btn btn-danger">Delete</button>
+        <button id="cancel-edit-btn" class="btn btn-secondary">Cancel</button>
+        <button id="save-edit-btn" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
